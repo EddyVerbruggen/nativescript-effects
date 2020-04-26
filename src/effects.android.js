@@ -1,18 +1,16 @@
-import { Common } from './effects.common';
-import { AnimationDefinition } from '@nativescript/core/ui/animation';
-import * as viewModule from '@nativescript/core/ui/core/view';
-
-export class Effects extends Common {
-    private _view: viewModule.View;
-
-    constructor(view: viewModule.View) {
-        super();
-        this._view = view;
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var effects_common_1 = require("./effects.common");
+var viewModule = require("@nativescript/core/ui/core/view");
+var Effects = (function (_super) {
+    __extends(Effects, _super);
+    function Effects(view) {
+        var _this = _super.call(this) || this;
+        _this._view = view;
+        return _this;
     }
-
-    public nativeSpring(animation): Promise<void> {
-        // this is where the native android spring animation will be implemeted
-        let def: AnimationDefinition = {
+    Effects.prototype.nativeSpring = function (animation) {
+        var def = {
             scale: { x: animation.scale.x, y: animation.scale.y },
             translate: { x: animation.translate.x, y: animation.translate.y },
             delay: animation.delay,
@@ -20,13 +18,15 @@ export class Effects extends Common {
             curve: 'spring'
         };
         return this._view.animate(def);
-    }
-}
-
+    };
+    return Effects;
+}(effects_common_1.Common));
+exports.Effects = Effects;
 viewModule.View.prototype.spring = function (duration, animation) {
-    if (duration === void 0) { duration = Effects.defaultDuration; }
-
-    const msDuration = Effects.getMsValue(duration);
+    if (duration === void 0) {
+        duration = Effects.defaultDuration;
+    }
+    var msDuration = Effects.getMsValue(duration);
     if (!animation) {
         animation = {
             translate: {
@@ -47,8 +47,7 @@ viewModule.View.prototype.spring = function (duration, animation) {
     else {
         animation.duration = msDuration;
     }
-
-
-    const fx = new Effects(this);
+    var fx = new Effects(this);
     return fx.nativeSpring(animation);
 };
+//# sourceMappingURL=effects.android.js.map

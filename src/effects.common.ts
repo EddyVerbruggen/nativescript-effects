@@ -1,9 +1,7 @@
-import { Observable } from 'tns-core-modules/data/observable';
-import * as app from 'tns-core-modules/application';
-import * as dialogs from 'tns-core-modules/ui/dialogs';
-import * as viewModule from 'tns-core-modules/ui/core/view';
-import * as typesModule from 'tns-core-modules/utils/types';
-import * as enums from 'tns-core-modules/ui/enums';
+import { Observable } from '@nativescript/core/data/observable';
+import * as viewModule from '@nativescript/core/ui/core/view';
+import * as typesModule from '@nativescript/core/utils/types';
+import * as enums from '@nativescript/core/ui/enums';
 
 export class Common extends Observable {
     public static defaultDuration = 400;
@@ -75,8 +73,8 @@ viewModule.View.prototype.fadeToggle = function(duration) {
     }
 };
 
-//.floatIn( [duration ]  )
-//.floatIn( options )
+// .floatIn( [duration ]  )
+// .floatIn( options )
 viewModule.View.prototype.floatIn = function(duration, direction) {
     if (duration === void 0) { duration = Common.defaultDuration; }
     if (direction === void 0) { direction = Common.defaultFloatDirection; }
@@ -121,9 +119,9 @@ viewModule.View.prototype.floatOut = function(duration, direction) {
 };
 
 
-//.hide()
-//.hide( [duration ] )
-//.hide( options )
+// .hide()
+// .hide( [duration ] )
+// .hide( options )
 viewModule.View.prototype.hide = function(duration) {
     if (duration === void 0) { duration = 1; }
     this.visibility = enums.Visibility.collapse;
@@ -146,8 +144,8 @@ viewModule.View.prototype.toggle = function(duration) {
     }
 };
 
-//.slideDown( [duration ]  )
-//.slideDown( options )
+// .slideDown( [duration ]  )
+// .slideDown( options )
 viewModule.View.prototype.slideDown = function(duration, distance) {
     if (duration === void 0) { duration = Common.defaultDuration; }
     if (distance === void 0) { distance = Common.defaultSlideDistance; }

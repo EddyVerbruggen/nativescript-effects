@@ -1,7 +1,7 @@
 import { Common } from './effects.common';
-import { View } from 'tns-core-modules/ui/core/view';
+import { View } from '@nativescript/core/ui/core/view';
 
-declare module 'tns-core-modules/ui/core/view' {
+declare module '@nativescript/core/ui/core/view' {
   interface View {
     fadeIn(duration?: string | number): Promise<void>;
     fadeOut(duration?: string | number): Promise<void>;

@@ -1,6 +1,6 @@
 {
     "name": "nativescript-effects",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "A NativeScript plugin that extend animations to include common animation scenarios.",
     "main": "effects",
     "typings": "tns-effects.d.ts",
@@ -54,12 +54,9 @@
     "license": "MIT",
     "homepage": "https://github.com/alexziskind1/nativescript-effects",
     "readmeFilename": "README.md",
-    "peerDependencies": {
-        "tns-core-modules": "^3.0.0"
-    },
     "devDependencies": {
-        "tns-core-modules": "^3.1.0",
-        "tns-platform-declarations": "^3.1.0",
+        "@nativescript/core": "^6.5.1",
+        "tns-platform-declarations": "^6.5.1",
         "typescript": "~2.3.0",
         "prompt": "^1.0.0",
         "rimraf": "^2.5.0",

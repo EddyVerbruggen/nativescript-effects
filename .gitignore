@@ -1,7 +1,8 @@
 .vscode
 .idea
 .DS_Store
-*.js
+#commented, because I want to be able to include this plugin from Github directly
+#*.js
 *.js.map
 *.log
 src/*.d.ts
